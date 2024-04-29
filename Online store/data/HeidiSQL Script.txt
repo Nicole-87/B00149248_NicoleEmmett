@@ -1,0 +1,80 @@
+-- --------------------------------------------------------
+-- Host:                         127.0.0.1
+-- Server version:               8.0.30 - MySQL Community Server - GPL
+-- Server OS:                    Win64
+-- HeidiSQL Version:             12.1.0.6537
+-- --------------------------------------------------------
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET NAMES utf8 */;
+/*!50503 SET NAMES utf8mb4 */;
+/*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
+/*!40103 SET TIME_ZONE='+00:00' */;
+/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
+/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
+/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
+
+-- Dumping structure for table accholder.account
+CREATE TABLE IF NOT EXISTS `account` (
+  `id` int unsigned NOT NULL AUTO_INCREMENT,
+  `firstname` varchar(30) NOT NULL,
+  `lastname` varchar(30) NOT NULL,
+  `email` varchar(50) NOT NULL,
+  `age` int DEFAULT NULL,
+  `location` varchar(50) DEFAULT NULL,
+  `date` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=35 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+-- Dumping data for table accholder.account: ~10 rows (approximately)
+INSERT INTO `account` (`id`, `firstname`, `lastname`, `email`, `age`, `location`, `date`) VALUES
+	(2, 'Arlo', 'Emmett', 'arlo@emmett.com', 21, 'carlow', NULL),
+	(3, 'Emilia', 'Rose', 'erose@mail.com', 32, 'meath', NULL),
+	(4, 'Nicole', 'Emmett', 'b00149248@mytudublin.ie', 35, 'Kerry', NULL),
+	(5, 'Rob', 'Emmett', 'rob@gmail.com', 22, 'dub', NULL),
+	(8, 'Stephen', 'Gabbett', 'ste@gmail.com', 21, 'Dublin', NULL),
+	(9, 'Mary', 'murphy', 'mm@gmail.com', 21, 'Dublin', NULL),
+	(12, 'Mari', 'Rosberg', 'mros@gmail.com', 42, 'Dublin', NULL),
+	(32, 'Jen', 'Fitzgibbon', 'jen@gmail.com', 36, 'Meath', NULL),
+	(33, 'Mary', 'Murphy', 'mm@gmail.com', 57, 'Meath', NULL),
+	(34, 'Nicole', 'Emmett', 'nemmett@msc.ie', 36, 'Dublin', NULL);
+
+-- Dumping structure for table accholder.sale
+CREATE TABLE IF NOT EXISTS `sale` (
+  `productID` int unsigned NOT NULL AUTO_INCREMENT,
+  `productName` varchar(100) NOT NULL,
+  `price` varchar(30) NOT NULL,
+  `about` varchar(500) NOT NULL,
+  PRIMARY KEY (`productID`)
+) ENGINE=InnoDB AUTO_INCREMENT=988 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+-- Dumping data for table accholder.sale: ~9 rows (approximately)
+INSERT INTO `sale` (`productID`, `productName`, `price`, `about`) VALUES
+	(123, 'Image VitalC Serum', '75', 'For best results, use in conjunction with retinol. Brightens skin'),
+	(321, 'Obagi Retinol 1%', '90', 'Derivitave of Vitamin A, Retinol speeds up the skin renewal process. Used on ageing or hyperpigmented skin'),
+	(456, 'Obagi ClearFX', '80', 'Hydroquinone supresses hyperpigmentation in the skin by slowing down the release of melanin and brightening skin tone. Used on melasma or hyperpigmentation'),
+	(546, 'Image Bundle', '100', 'Great value bundle'),
+	(559, 'Obagi Bundle', '150', 'Great value bundle'),
+	(654, 'Image Ageless Cleanser', '40', 'Used on ageing skin. Glycolic acid will help to gently exfoliate.'),
+	(789, 'Dermalogica Special cleansing gel', '50', 'Gel to foam cleanser. Can be used ON ALL skin types'),
+	(874, 'Dermalogica Trio', '100', 'Great value bundle'),
+	(987, 'Dermalogica PreCleanse', '40', 'Melts away make up. Can be used ON ALL skin types');
+
+-- Dumping structure for table accholder.users
+CREATE TABLE IF NOT EXISTS `users` (
+  `username` varchar(30) NOT NULL,
+  `password` varchar(30) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+-- Dumping data for table accholder.users: ~4 rows (approximately)
+INSERT INTO `users` (`username`, `password`) VALUES
+	('Nicole', 'pass'),
+	('Emilia', 'word'),
+	('Arlo', '1234'),
+	('Robert', 'password');
+
+/*!40103 SET TIME_ZONE=IFNULL(@OLD_TIME_ZONE, 'system') */;
+/*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;
+/*!40014 SET FOREIGN_KEY_CHECKS=IFNULL(@OLD_FOREIGN_KEY_CHECKS, 1) */;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40111 SET SQL_NOTES=IFNULL(@OLD_SQL_NOTES, 1) */;
