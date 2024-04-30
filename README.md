@@ -1,6 +1,8 @@
 # B00149248_NicoleEmmett
 Web Applications Project_ Online Store
 
+Heidi SQL script is within the data folder. 
+
 
 Refferences:
 Web Application lectures
